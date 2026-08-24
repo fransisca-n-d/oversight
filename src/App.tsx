@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
+import Projects from "./pages/Projects";
 
 function Home() {
   return (
@@ -11,27 +12,26 @@ function Home() {
 
         <p className="mt-3 text-slate-600">
           Track project health, forecast delivery risks,
-and monitor portfolio performance in one place.
+          and monitor portfolio performance in one place.
         </p>
 
         <Link
-        to="/dashboard"
-        className="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition"
+          to="/dashboard"
+          className="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition"
         >
           View Dashboard
         </Link>
-      
       </div>
     </main>
   );
 }
 
-export default function App(){
+export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/projects" element={<Projects />} />
     </Routes>
-  )
+  );
 }
-;
