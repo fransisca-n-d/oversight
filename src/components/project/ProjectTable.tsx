@@ -3,15 +3,30 @@ import { useState } from "react";
 
 export default function ProjectTable() {
       const [statusFilter, setStatusFilter] = useState("All");
+      const [searchTerm, setSearchTerm] = useState("");
 
-const filteredProjects =
-  statusFilter === "All"
-    ? projects
-    : projects.filter((project) => project.status === statusFilter);
+const filteredProjects = projects.filter((project) => {
+  const matchesStatus =
+    statusFilter === "All" || project.status === statusFilter;
+
+  const matchesSearch = project.name
+    .toLowerCase()
+    .includes(searchTerm.toLowerCase());
+
+  return matchesStatus && matchesSearch;
+});
+
   return (
 
     <div className="mt-8 bg-white rounded-xl shadow overflow-hidden">
       <div className="p-6 border-b">
+  <input
+  type="text"
+  placeholder="Search projects..."
+  value={searchTerm}
+  onChange={(e) => setSearchTerm(e.target.value)}
+  className="border border-slate-300 rounded-lg px-4 py-2 mr-4"
+ />
   <select
     value={statusFilter}
     onChange={(e) => setStatusFilter(e.target.value)}
