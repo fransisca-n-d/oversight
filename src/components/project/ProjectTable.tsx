@@ -1,5 +1,6 @@
 import { projects } from "../../data/projects";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ProjectTable() {
       const [statusFilter, setStatusFilter] = useState("All");
@@ -65,9 +66,14 @@ const filteredProjects = projects.filter((project) => {
         <tbody>
          {filteredProjects.map((project) => (
             <tr key={project.id} className="border-b last:border-b-0">
-              <td className="px-6 py-4 font-medium text-slate-800">
-                {project.name}
-              </td>
+              <td className="px-6 py-4 font-medium">
+  <Link
+    to={`/projects/${project.id}`}
+    className="text-blue-600 hover:underline"
+  >
+    {project.name}
+  </Link>
+</td>
 
               <td className="px-6 py-4 text-slate-600">
                 {project.sponsor}
