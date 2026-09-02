@@ -385,7 +385,7 @@ export default function ProjectDetails() {
 
       <div className="mt-8 bg-white rounded-xl shadow p-6">
         <p className="text-sm text-slate-500">
-          Management Assessment
+          Management Priority
         </p>
 
         <div className="mt-2 flex items-center gap-3">
@@ -401,9 +401,6 @@ export default function ProjectDetails() {
             {managementPriority}
           </p>
 
-          <span className="text-sm text-slate-500">
-            Management Priority
-          </span>
         </div>
 
         <div className="mt-5">
