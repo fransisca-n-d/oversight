@@ -13,14 +13,6 @@ interface Project {
   bac: number;
 }
 
-interface EVMRecord {
-  project_id: number;
-  date: string;
-  planned_value: number;
-  earned_value: number;
-  actual_cost: number;
-}
-
 interface ProjectWithHealth extends Project {
   health: string;
 }
